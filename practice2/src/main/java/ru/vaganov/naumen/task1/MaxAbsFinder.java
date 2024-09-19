@@ -14,7 +14,7 @@ public class MaxAbsFinder implements Task1 {
         }
         Integer max = array[0];
         for (Integer num : array) {
-            if (num >= max) {
+            if (Math.abs(num) >= Math.abs(max)) {
                 max = num;
             }
         }
