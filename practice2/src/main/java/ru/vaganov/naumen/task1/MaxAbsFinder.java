@@ -2,7 +2,7 @@ package ru.vaganov.naumen.task1;
 
 public class MaxAbsFinder implements Task1 {
     /**
-     * Найти максимальное значение по модулю в массиве
+     * Вариант 1. Найти максимальное значение по модулю в массиве
      *
      * @param array массив
      * @return максимальное значение по модулю в массиве

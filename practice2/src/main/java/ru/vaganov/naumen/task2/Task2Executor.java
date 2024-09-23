@@ -24,7 +24,7 @@ public class Task2Executor {
         System.out.println("Сгенерированный список: " + printList(data));
         List<Double> result = task.process(data);
 
-        System.out.println("Отсортированный список: " + printList(data));
+        System.out.println("Отсортированный список: " + printList(result));
     }
 
     private String printList(List<Double> list){
