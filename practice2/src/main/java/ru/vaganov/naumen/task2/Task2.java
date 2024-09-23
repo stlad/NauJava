@@ -12,5 +12,5 @@ public interface Task2 {
 
     String getTask();
 
-    List<Double> process(List<Double> initList);
+    void sort(List<Double> initList);
 }

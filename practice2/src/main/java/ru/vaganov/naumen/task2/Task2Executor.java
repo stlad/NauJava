@@ -1,8 +1,5 @@
 package ru.vaganov.naumen.task2;
 
-import ru.vaganov.naumen.task1.Task1;
-
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -22,9 +19,9 @@ public class Task2Executor {
 
         List<Double> data = dataProvider.initRandoms(n);
         System.out.println("Сгенерированный список: " + printList(data));
-        List<Double> result = task.process(data);
+        task.sort(data);
 
-        System.out.println("Отсортированный список: " + printList(result));
+        System.out.println("Отсортированный список: " + printList(data));
     }
 
     private String printList(List<Double> list){
