@@ -5,13 +5,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class LastPositiveFinderTest {
+class Task1Test {
 
-    private LastPositiveFinder lastPositiveFinder;
+    private Task1 task1;
 
     @BeforeEach
     void init() {
-        lastPositiveFinder = new LastPositiveFinder();
+        task1 = new Task1();
     }
 
     @Test
@@ -19,7 +19,7 @@ class LastPositiveFinderTest {
     void process_returnsLastPositive_OnAscArray() {
         Integer[] data = new Integer[]{10, 20, 30, 40};
 
-        Integer result = lastPositiveFinder.process(data.length, data);
+        Integer result = task1.findLastPositive(data.length, data);
         Assertions.assertEquals(40, result);
     }
 
@@ -28,7 +28,7 @@ class LastPositiveFinderTest {
     void process_returnsLastPositive_OnDescArray() {
         Integer[] data = new Integer[]{100, 50, 10, 5};
 
-        Integer result = lastPositiveFinder.process(data.length, data);
+        Integer result = task1.findLastPositive(data.length, data);
         Assertions.assertEquals(5, result);
     }
 
@@ -37,7 +37,7 @@ class LastPositiveFinderTest {
     void process_returnsLastPositive_ofBiggestPositiveNumber() {
         Integer[] data = new Integer[]{-100, 0, 1000, -10};
 
-        Integer result = lastPositiveFinder.process(data.length, data);
+        Integer result = task1.findLastPositive(data.length, data);
         Assertions.assertEquals(1000, result);
     }
 
@@ -46,7 +46,7 @@ class LastPositiveFinderTest {
     void process_returnsLastPositive_ofBiggestNegativeNumber() {
         Integer[] data = new Integer[]{-20, 0, -1000, -10};
 
-        Integer result = lastPositiveFinder.process(data.length, data);
+        Integer result = task1.findLastPositive(data.length, data);
         Assertions.assertNull( result);
     }
 
@@ -55,7 +55,7 @@ class LastPositiveFinderTest {
     void process_returnsLastPositive_returnsNullOnEmptyArray() {
         Integer[] data = new Integer[]{};
 
-        Integer result = lastPositiveFinder.process(data.length, data);
+        Integer result = task1.findLastPositive(data.length, data);
         Assertions.assertNull(result);
     }
 

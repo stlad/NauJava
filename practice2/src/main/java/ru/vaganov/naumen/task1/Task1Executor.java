@@ -18,8 +18,9 @@ public class Task1Executor {
 
         Integer[] data = dataProvider.initRandoms(n);
         System.out.println("Сгенерированный массив: " + Arrays.toString(data));
-        Integer result = task.process(n, data);
+        Integer result = task.findLastPositive(n, data);
 
         System.out.println("Результат: " + (result == null ? "Подан пустой массив" : result));
+        scanner.close();
     }
 }

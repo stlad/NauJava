@@ -18,13 +18,14 @@ public class Task2Executor {
         Integer n = Integer.parseInt(scanner.nextLine());
 
         List<Double> data = dataProvider.initRandoms(n);
-        System.out.println("Сгенерированный список: " + printList(data));
-        task.sort(data);
+        System.out.println("Сгенерированный список: " + covertToString(data));
+        task.selectionSort(data);
 
-        System.out.println("Отсортированный список: " + printList(data));
+        System.out.println("Отсортированный список: " + covertToString(data));
+        scanner.close();
     }
 
-    private String printList(List<Double> list){
+    private String covertToString(List<Double> list){
         return list.stream().map(Object::toString).collect(Collectors.joining(", ","[","]"));
     }
 }
