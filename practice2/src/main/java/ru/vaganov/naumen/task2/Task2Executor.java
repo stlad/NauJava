@@ -22,7 +22,6 @@ public class Task2Executor {
         task.selectionSort(data);
 
         System.out.println("Отсортированный список: " + covertToString(data));
-        scanner.close();
     }
 
     private String covertToString(List<Double> list){

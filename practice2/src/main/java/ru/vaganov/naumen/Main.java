@@ -15,22 +15,27 @@ public class Main {
         System.out.println("Ваганов Владислав. РИМ-140970");
         while (true) {
         Scanner scanner = new Scanner(System.in);
-            System.out.println("Введите номер задания. Или \"x\" - для завершения работы");
             System.out.println("--------------------------------------------");
+            System.out.print("Введите номер задания (или \"q\" - для завершения работы): ");
             String input = scanner.nextLine().toLowerCase();
+            System.out.println("--------------------------------------------");
             switch (input) {
                 case "1":
                     new Task1Executor().execute(new Task1());
+                    break;
                 case "2":
                     new Task2Executor().execute(new Task2());
+                    break;
                 case "3":
                     new Task3Executor().execute(new Task3());
+                    break;
                 case "4":
                     throw new UnsupportedOperationException("Еще не реализовано");
-                case "x":
+                case "q":
                     return;
                 default:
                     System.out.println("Введен некорректный номер задания");
+                    break;
             }
         }
 

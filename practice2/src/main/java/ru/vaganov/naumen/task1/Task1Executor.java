@@ -21,6 +21,5 @@ public class Task1Executor {
         Integer result = task.findLastPositive(n, data);
 
         System.out.println("Результат: " + (result == null ? "Подан пустой массив" : result));
-        scanner.close();
     }
 }
