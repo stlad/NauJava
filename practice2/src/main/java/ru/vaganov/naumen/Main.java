@@ -6,6 +6,8 @@ import ru.vaganov.naumen.task2.Task2;
 import ru.vaganov.naumen.task2.Task2Executor;
 import ru.vaganov.naumen.task3.Task3;
 import ru.vaganov.naumen.task3.Task3Executor;
+import ru.vaganov.naumen.task4.Task4;
+import ru.vaganov.naumen.task4.Task4Executor;
 
 import java.util.Scanner;
 
@@ -30,7 +32,7 @@ public class Main {
                     new Task3Executor().execute(new Task3());
                     break;
                 case "4":
-                    throw new UnsupportedOperationException("Еще не реализовано");
+                    new Task4Executor().execute(new Task4());
                 case "q":
                     return;
                 default:
