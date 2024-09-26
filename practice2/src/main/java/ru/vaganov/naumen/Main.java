@@ -1,12 +1,8 @@
 package ru.vaganov.naumen;
 
-import ru.vaganov.naumen.task1.Task1;
 import ru.vaganov.naumen.task1.Task1Executor;
-import ru.vaganov.naumen.task2.Task2;
 import ru.vaganov.naumen.task2.Task2Executor;
-import ru.vaganov.naumen.task3.Task3;
 import ru.vaganov.naumen.task3.Task3Executor;
-import ru.vaganov.naumen.task4.Task4;
 import ru.vaganov.naumen.task4.Task4Executor;
 import ru.vaganov.naumen.task5.Task5Executor;
 
@@ -17,11 +13,11 @@ public class Main {
         System.out.println("Практическая работа 2. Вариант 4");
         System.out.println("Ваганов Владислав. РИМ-140970");
         while (true) {
-        Scanner scanner = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);
             System.out.println("--------------------------------------------");
             System.out.print("Введите номер задания (или \"q\" - для завершения работы): ");
             String input = scanner.nextLine().toLowerCase();
-            System.out.println("--------------------------------------------");
+            System.out.println("--------------------------------------------\n");
             switch (input) {
                 case "1":
                     new Task1Executor().execute();
