@@ -10,7 +10,8 @@ public class Task1Executor {
         dataProvider = new Task1DataProvider();
     }
 
-    public void execute(Task1 task) {
+    public void execute() {
+        Task1 task = new Task1();
         System.out.println("Задание 1: " + task.getTask());
         System.out.print("Введите размер массива: ");
         Scanner scanner = new Scanner(System.in);

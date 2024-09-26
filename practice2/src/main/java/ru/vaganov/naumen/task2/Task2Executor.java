@@ -7,11 +7,12 @@ import java.util.stream.Collectors;
 public class Task2Executor {
     private final Task2DataProvider dataProvider;
 
-    public Task2Executor(){
+    public Task2Executor() {
         dataProvider = new Task2DataProvider();
     }
 
-    public void execute(Task2 task) {
+    public void execute() {
+        Task2 task = new Task2();
         System.out.println("Задание 2: " + task.getTask());
         System.out.print("Введите размер массива: ");
         Scanner scanner = new Scanner(System.in);
@@ -24,7 +25,7 @@ public class Task2Executor {
         System.out.println("Отсортированный список: " + covertToString(data));
     }
 
-    private String covertToString(List<Double> list){
-        return list.stream().map(Object::toString).collect(Collectors.joining(", ","[","]"));
+    private String covertToString(List<Double> list) {
+        return list.stream().map(Object::toString).collect(Collectors.joining(", ", "[", "]"));
     }
 }

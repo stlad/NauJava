@@ -8,6 +8,7 @@ import ru.vaganov.naumen.task3.Task3;
 import ru.vaganov.naumen.task3.Task3Executor;
 import ru.vaganov.naumen.task4.Task4;
 import ru.vaganov.naumen.task4.Task4Executor;
+import ru.vaganov.naumen.task5.Task5Executor;
 
 import java.util.Scanner;
 
@@ -23,16 +24,20 @@ public class Main {
             System.out.println("--------------------------------------------");
             switch (input) {
                 case "1":
-                    new Task1Executor().execute(new Task1());
+                    new Task1Executor().execute();
                     break;
                 case "2":
-                    new Task2Executor().execute(new Task2());
+                    new Task2Executor().execute();
                     break;
                 case "3":
-                    new Task3Executor().execute(new Task3());
+                    new Task3Executor().execute();
                     break;
                 case "4":
-                    new Task4Executor().execute(new Task4());
+                    new Task4Executor().execute();
+                    break;
+                case "5":
+                    new Task5Executor().execute();
+                    break;
                 case "q":
                     return;
                 default:

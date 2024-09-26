@@ -11,7 +11,8 @@ public class Task3Executor {
         this.dataProvider = new Task3DataProvider();
     }
 
-    public void execute(Task3 task) {
+    public void execute() {
+        Task3 task = new Task3();
         System.out.println("Задание 3: " + task.getTask());
         System.out.println("Исходные данные:");
         List<Employee> employees = dataProvider.initData();
@@ -21,7 +22,7 @@ public class Task3Executor {
         printList(result);
     }
 
-    private void printList(List<?> list){
+    private void printList(List<?> list) {
         System.out.println(list.stream().map(Object::toString).collect(Collectors.joining(",\n")));
     }
 }

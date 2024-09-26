@@ -4,7 +4,8 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class Task4Executor {
-    public void execute(Task4 task) {
+    public void execute() {
+        Task4 task = new Task4();
         System.out.println("Задание 4: " + task.getTask());
         String[] result = task.getAcceptHeaders();
         printArray(result);
