@@ -4,7 +4,7 @@ import java.util.Queue;
 
 public class Task5 implements Task {
 
-    private Queue<Integer> queue;
+    private final Queue<Integer> queue;
     private volatile boolean isRunning;
 
     public Task5(Queue<Integer> queue) {

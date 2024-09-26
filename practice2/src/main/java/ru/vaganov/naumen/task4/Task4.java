@@ -1,4 +1,5 @@
 package ru.vaganov.naumen.task4;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,14 +10,10 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
-
 public class Task4 {
     public String[] getAcceptHeaders() {
         var client = HttpClient.newHttpClient();
-        try{
+        try {
             HttpResponse<String> response = client.send(buildRequest(), HttpResponse.BodyHandlers.ofString());
             return processResponse(response);
         } catch (IOException | InterruptedException e) {
@@ -28,12 +25,12 @@ public class Task4 {
     private HttpRequest buildRequest() {
         return HttpRequest.newBuilder()
                 .uri(URI.create("https://httpbin.org/anything"))
-                .headers("Accept","application/json;text/html")
+                .headers("Accept", "application/json;text/html")
                 .GET()
                 .build();
     }
 
-    private String[] processResponse(HttpResponse response){
+    private String[] processResponse(HttpResponse response) {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             JsonNode node = objectMapper.readTree(response.body().toString()).findValue("headers");
@@ -41,7 +38,7 @@ public class Task4 {
 
             return acceptHeader == null ?
                     new String[]{} :
-                    acceptHeader.replace("\"","").split(";");
+                    acceptHeader.replace("\"", "").split(";");
         } catch (JsonProcessingException e) {
             System.out.println("Не удалось десериализовать ответ");
             return new String[]{};
