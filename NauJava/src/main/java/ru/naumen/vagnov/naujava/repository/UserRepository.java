@@ -2,8 +2,9 @@ package ru.naumen.vagnov.naujava.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import ru.naumen.vagnov.naujava.exceptions.NaumenEntityExistsException;
 import ru.naumen.vagnov.naujava.exceptions.NaumenEntityNotFoundException;
-import ru.naumen.vagnov.naujava.model.User;
+import ru.naumen.vagnov.naujava.entity.User;
 
 import java.util.List;
 
@@ -18,6 +19,10 @@ public class UserRepository implements CrudRepository<User, Long> {
 
     @Override
     public void create(User entity) {
+        var foundUser = userContainer.stream().filter(u -> u.getId().equals(entity.getId())).findAny();
+        if(foundUser.isPresent()){
+            throw new NaumenEntityExistsException("Уже существует пользователь с id: "+entity.getId());
+        }
         userContainer.add(entity);
     }
 
@@ -29,7 +34,7 @@ public class UserRepository implements CrudRepository<User, Long> {
 
     @Override
     public void update(User entity) {
-        var foundUser = userContainer.stream().filter(u -> u.getId() == entity.getId()).findAny()
+        var foundUser = userContainer.stream().filter(u -> u.getId().equals(entity.getId())).findAny()
                 .orElseThrow(() -> new NaumenEntityNotFoundException("Не удалось найти пользователя с id: " + entity.getId()));
         foundUser.setEmail(entity.getEmail());
         foundUser.setLogin(entity.getLogin());

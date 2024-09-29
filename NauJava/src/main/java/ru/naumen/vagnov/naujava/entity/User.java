@@ -1,4 +1,4 @@
-package ru.naumen.vagnov.naujava.model;
+package ru.naumen.vagnov.naujava.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

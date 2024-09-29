@@ -4,7 +4,7 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
-import ru.naumen.vagnov.naujava.model.User;
+import ru.naumen.vagnov.naujava.entity.User;
 
 import java.util.ArrayList;
 import java.util.List;
