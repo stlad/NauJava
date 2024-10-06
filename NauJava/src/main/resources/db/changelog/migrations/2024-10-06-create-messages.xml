@@ -1,0 +1,25 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd" >
+
+    <changeSet id="create-messages" author="Vaganov.VS">
+        <createTable tableName="messages">
+            <column name="user_id" type="uuid" remarks="ИД Сообщения">
+                <constraints primaryKey="true" />
+            </column>
+            <column name="content" type="varchar" remarks="ИД роли" />
+            <column name="postedAt" type="datetime" remarks="Время публикаци сообщения" />
+            <column name="author_id" type="uuid" remarks="ИД автора сообщения" />
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="messages"
+                baseColumnNames="author_id"
+                constraintName="messages_to_user_fk"
+                referencedTableName="users"
+                referencedColumnNames="id"
+                onDelete="SET NULL" />
+    </changeSet>
+</databaseChangeLog>

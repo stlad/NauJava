@@ -4,5 +4,9 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd" >
 
-    <include file="/db/changelog/migrations/create-tables.xml" />
+    <include file="/db/changelog/migrations/2024-10-06-create-user.xml" />
+    <include file="/db/changelog/migrations/2024-10-06-create-roles.xml" />
+    <include file="/db/changelog/migrations/2024-10-06-create-user-roles.xml" />
+    <include file="/db/changelog/migrations/2024-10-06-create-messages.xml" />
+    <include file="/db/changelog/migrations/2024-10-06-create-chats.xml" />
 </databaseChangeLog>

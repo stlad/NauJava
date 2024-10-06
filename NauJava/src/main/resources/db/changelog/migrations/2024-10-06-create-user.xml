@@ -1,0 +1,38 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd" >
+
+    <changeSet id="create-user" author="Vaganov.VS">
+        <createTable tableName="users">
+            <column name="id" type="uuid" remarks="ИД пользователя">
+                <constraints primaryKey="true" />
+            </column>
+            <column name="email" type="varchar" remarks="Почта" />
+            <column name="login" type="varchar" remarks="Логин" />
+            <column name="registered_at" type="datetime" remarks="Время регистрации" />
+            <column name="password" type="varchar" remarks="Пароль" />
+            <column name="is_banned" type="boolean" remarks="Флаг блокировки пользователя" />
+        </createTable>
+    </changeSet>
+    <changeSet id="create-user-info" author="Vaganov.VS">
+        <createTable tableName="user_infos">
+            <column name="id" type="uuid" remarks="ИД записи">
+                <constraints primaryKey="true" />
+            </column>
+            <column name="about" type="varchar" remarks="О пользователе" />
+            <column name="vk" type="varchar" remarks="Ссылка на ВК" />
+            <column name="telegram" type="varchar" remarks="Ссылка на телеграм" />
+            <column name="skype" type="varchar" remarks="Ссылка на скайп" />
+            <column name="user_id" type="uuid" remarks="ИД пользователя" />
+        </createTable>
+        <addForeignKeyConstraint
+                baseTableName="user_infos"
+                baseColumnNames="user_id"
+                constraintName="user_info_to_user_fk"
+                referencedTableName="users"
+                referencedColumnNames="id"
+                onDelete="CASCADE"/>
+    </changeSet>
+</databaseChangeLog>
