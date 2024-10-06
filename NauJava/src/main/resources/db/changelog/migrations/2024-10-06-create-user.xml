@@ -13,7 +13,7 @@
             <column name="login" type="varchar" remarks="Логин" />
             <column name="registered_at" type="datetime" remarks="Время регистрации" />
             <column name="password" type="varchar" remarks="Пароль" />
-            <column name="is_banned" type="boolean" remarks="Флаг блокировки пользователя" />
+            <column name="is_banned" type="boolean" remarks="Флаг блокировки пользователя" defaultValue="false"/>
         </createTable>
     </changeSet>
     <changeSet id="create-user-info" author="Vaganov.VS">
