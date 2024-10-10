@@ -1,9 +1,7 @@
 package ru.naumen.vagnov.naujava.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDateTime;
@@ -15,6 +13,8 @@ import java.util.UUID;
 @Builder
 @Entity
 @Table(name = "chats")
+@Getter
+@Setter
 public class Chat {
     @Id
     @UuidGenerator

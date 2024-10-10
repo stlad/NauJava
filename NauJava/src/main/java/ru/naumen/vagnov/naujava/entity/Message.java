@@ -1,9 +1,7 @@
 package ru.naumen.vagnov.naujava.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.annotations.UuidGenerator;
@@ -17,6 +15,8 @@ import java.util.UUID;
 @Builder
 @Entity
 @Table(name = "messages")
+@Getter
+@Setter
 public class Message {
     @Id
     @UuidGenerator
