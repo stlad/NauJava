@@ -1,4 +1,4 @@
-package ru.naumen.vagnov.naujava;
+package ru.naumen.vagnov.naujava.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

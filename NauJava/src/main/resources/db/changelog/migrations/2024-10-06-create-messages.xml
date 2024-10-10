@@ -6,11 +6,11 @@
 
     <changeSet id="create-messages" author="Vaganov.VS">
         <createTable tableName="messages">
-            <column name="user_id" type="uuid" remarks="ИД Сообщения">
+            <column name="id" type="uuid" remarks="ИД Сообщения">
                 <constraints primaryKey="true" />
             </column>
             <column name="content" type="varchar" remarks="ИД роли" />
-            <column name="postedAt" type="datetime" remarks="Время публикаци сообщения" />
+            <column name="posted_at" type="datetime" remarks="Время публикаци сообщения" />
             <column name="author_id" type="uuid" remarks="ИД автора сообщения" />
         </createTable>
 

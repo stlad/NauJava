@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Builder
 @Entity
 @Table(name = "chat_members")
-public class ChatMembers {
+public class ChatMember {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
