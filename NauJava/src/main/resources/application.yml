@@ -1,4 +1,5 @@
-# Данная конфигурация предназначена для основного окружения
+server:
+  port : 8080
 spring:
   datasource:
     url : jdbc:postgresql://localhost:5432/naujava_db
@@ -13,9 +14,12 @@ spring:
       hibernate:
         dialect : org.hibernate.dialect.PostgreSQLDialect
 
-# Буду использовать liquibase для создания схемы БД. БД создадим ручную -  не будем полагаться в этом на Hibernate
-# Так у нас будет больше контроля над базой, все изменения в БД будут контролируем и отследиваеживаемы
-# Библиотека создаст две своих таблицы: databasechangelog и databasechangeloglock
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.xml
     enabled: true
+
+springdoc:
+  show-actuator: false
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
